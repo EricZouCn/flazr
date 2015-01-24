@@ -328,6 +328,7 @@ public class ClientHandler extends SimpleChannelUpstreamHandler {
                 // do not create a writer if it wasn't set on the options
 //                if(writer == null)
 //                    writer = new FlvWriter(options.getStart(), options.getSaveAs());
+                options.setArgs((Object[])null);
                 channel.write(Command.play(streamId, options));
                 channel.write(Control.setBuffer(streamId, 0));
             }
